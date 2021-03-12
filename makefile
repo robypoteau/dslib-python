@@ -18,7 +18,7 @@ test:
 	    --verbose \
 	    dslib tests
 
-build-doc: test
+build-doc:
 	cd doc && make html
 
 package:
