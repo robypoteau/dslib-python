@@ -12,4 +12,6 @@ When you use a class to make an object, this is called instantiation; this is wh
 
 # Principles of OOP
 
-There are four major principles to
+There are four principles to objected-oriented programming: 1) abstraction, 2) encapsulation, 3) inheritance, and 4) polymorphism.
+
+Abstraction is about moving away from the details of one particular object and looking at the broader characteristics. For instance, a person might have the name Jennifer, but more generally, the individual has a name, and so do all persons. When you abstract, the goal is to find a model for the objects of interest, not for details specific to an individual. When we abstract, we are not interested in all the features of object, only the ones relevant to our use case.
