@@ -19,7 +19,8 @@ test:
 	    dslib tests
 
 build-doc:
-	cd doc && make html
+	cd docsrc && make html
+	cp -a docsrc/build/html/ docs
 
 package:
 	python setup.py sdist
