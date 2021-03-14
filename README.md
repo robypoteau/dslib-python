@@ -18,4 +18,4 @@ Abstraction is about moving away from the details of one particular object and l
 
 Encapsulation is about controlling access to the internal elements of a class to prevent unexpected changes to those elements. Additionally, by encapsulating the inner workings of a class, the programmer needs only to focus on the input and the output of a class without needing to know the inner workings of that class.
 
-Inheritance is about not rebuilding the wheel, consistency and ease. When you
+Inheritance is about reusing code and consistency. Often classes share functionality and features. Instead of rebuilding the wheel, a programmer can "inherit" code from a previously constructed class and extend it if need be. Inheriting code helps prevent developers from updating the same code snippet in various classes and, by extension, helps keep implementation details consistent between similar classes. The class from which I inherit is my parent (or base) class, while the class that inherits from a parent class is called a child (or derived) class.
