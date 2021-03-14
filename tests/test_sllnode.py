@@ -1,5 +1,9 @@
+from dslib.sllnode import SLLNode
+
 def test_constructor():
-    pass
+    data = 'First Item'
+    ll = SLLNode(data)
+    assert ll.data = data
 
 
 def test_get_data():

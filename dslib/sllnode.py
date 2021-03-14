@@ -27,7 +27,7 @@ class SLLNode:
         Object
             Data in the node
         """
-        pass
+        return self.data
 
     def set_data(self, data):
         """Edit the data in the node.
@@ -39,10 +39,10 @@ class SLLNode:
         data : Object
             Data is an object of any type
         """
-        pass
+        self.data = data
 
     def get_next(self):
-        """Get the pointer to the next node.
+        """Get the next-pointer to the next node.
 
         This operations runs in constant time, O(1).
 
@@ -51,10 +51,10 @@ class SLLNode:
         SLLNode
             Pointer to a node
         """
-        pass
+        return self.next
 
     def set_next(self, next):
-        """Edit the pointer to the next node.
+        """Edit the next-pointer to the next node.
 
         This operations runs in constant time, O(1).
 
@@ -63,4 +63,4 @@ class SLLNode:
         next : SLLNode
             An singly linked list node
         """
-        pass
+        self.next = next
