@@ -64,3 +64,9 @@ class SLLNode:
             An singly linked list node
         """
         self.next = next
+
+    def __repr__(self):
+        return (
+            f'<Data: {self.data},'
+            f' Next: {self.next.get_data() if self.next else self.next}>'
+        )
