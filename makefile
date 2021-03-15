@@ -18,6 +18,15 @@ test:
 	    --verbose \
 	    dslib tests
 
+test_%:
+	find . -name '*.pyc' -exec rm -f {} \;
+	./env/bin/flake8 dslib/$*.py tests/$@.py
+	./env/bin/python -m pytest \
+			--doctest-modules \
+			--disable-warnings \
+			--verbose \
+			dslib/$*.py tests/$@.py
+
 build-doc:
 	cd docsrc && make html
 	cp -a docsrc/build/html/ docs
