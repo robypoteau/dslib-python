@@ -12,25 +12,34 @@ def test_repr():
 
 
 def test_iterator():
-    pass
+    ll = LinkedList()
+    data = []
+    for i in range(4):
+        data.append(f'Datum{i}')
+        ll.insert_node(data[i])
+
+    i = -1
+    for value in ll:
+        assert value == data[i]
+        i -= 1
 
 
 def test_insert_node():
     data1 = "Datum"
     ll = LinkedList()
     ll.insert_node(data1)
-    assert ll.head.get_data() == data1
+    assert ll._LinkedList__head.get_data() == data1
 
     data2 = "Datum 2"
     ll.insert_node(data2)
-    assert ll.head.get_data() == data2
-    assert ll.head.get_next().get_data() == data1
+    assert ll._LinkedList__head.get_data() == data2
+    assert ll._LinkedList__head.get_next().get_data() == data1
 
     data3 = "Datum 3"
     ll.insert_node(data3)
-    assert ll.head.get_data() == data3
-    assert ll.head.get_next().get_data() == data2
-    assert ll.head.get_next().get_next().get_data() == data1
+    assert ll._LinkedList__head.get_data() == data3
+    assert ll._LinkedList__head.get_next().get_data() == data2
+    assert ll._LinkedList__head.get_next().get_next().get_data() == data1
 
 
 def test_remove_node():
@@ -74,4 +83,9 @@ def test_size():
 
 
 def test_is_empty():
-    pass
+    data = "Datum"
+    ll = LinkedList()
+    assert ll.is_empty() is True
+
+    ll.insert_node(data)
+    assert ll.is_empty() is False

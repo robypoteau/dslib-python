@@ -19,8 +19,8 @@ class LinkedList():
     def __init__(self):
         """Constructor for the LinkedList class.
         """
-        self.head = None
-        self.length = 0
+        self.__head = None
+        self.__length = 0
 
     def __repr__(self):
         """
@@ -37,17 +37,23 @@ class LinkedList():
         Integer
             List size
         """
-        return self.length
+        return self.__length
 
     def __iter__(self):
         """
         """
-        pass
+        self.__current = self.__head
+        return self
 
     def __next__(self):
         """
         """
-        pass
+        if self.__head:
+            raise StopIteration
+        else:
+            current = self.__current.get_data()
+            self.__current = self.__current.get_next()
+        return current
 
     def insert_node(self, data):
         """Add a new node to the front of the linked list.
@@ -60,9 +66,9 @@ class LinkedList():
             Data is an object of any type
         """
         node = SLLNode(data)
-        node.set_next(self.head)
-        self.head = node
-        self.length += 1
+        node.set_next(self.__head)
+        self.__head = node
+        self.__length += 1
 
     def remove_node(self):
         """Remove the node from the front of the linked list.
@@ -74,11 +80,11 @@ class LinkedList():
         Object
             Data in the node
         """
-        if self.length == 0:
+        if self.__length == 0:
             raise IndexError("no nodes in this linked list.")
-        data = self.head.get_data() if self.head else self.head
-        self.head = self.head.get_next() if self.head else self.head
-        self.length -= 1
+        data = self.__head.get_data() if self.__head else self.__head
+        self.__head = self.__head.get_next() if self.__head else self.__head
+        self.__length -= 1
         return data
 
     def search(self, data):
@@ -96,9 +102,16 @@ class LinkedList():
         Integer
             List size
         """
-        return self.length
+        return self.__length
 
     def is_empty(self):
+        """Reveals whether the linked list is empty.
+
+        This operations runs in constant time, O(1).
+
+        Returns
+        -------
+        Boolean
+            Returns True is the linked list is empty
         """
-        """
-        pass
+        return self.__length == 0

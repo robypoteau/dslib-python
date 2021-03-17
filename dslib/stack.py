@@ -86,7 +86,7 @@ class Stack:
         return len(self.items)
 
     def is_empty(self):
-        """Outputs the value of the element on the top of the stack.
+        """Reveals whether the stack is empty.
 
         This operations runs in constant time, O(1).
 
