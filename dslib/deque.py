@@ -15,49 +15,100 @@ Functions:
 class Deque():
 
     def __init__(self):
-        pass
+        self.__list = []
 
     def __repr__(self):
-        pass
+        return f"{self.__class__.__name__} at  {hex(id(self))}"
 
     def __len__(self):
-        pass
+        return len(self.__list)
 
     def __iter__(self):
-        pass
+        """Outputs the elements starting from the front.
+        """
+        self.__index = 0
+        return self
 
     def __next__(self):
-        pass
+        try:
+            item = self.__list[self.__index]
+        except Exception as e:
+            raise StopIteration
+
+        self.__index += 1
+        return item
 
     def add_front(self, data):
+        """Add an element to the front of the deque.
+
+        Parameters
+        ----------
+        data : Object
+            Data is an object of any type
         """
-        """
-        pass
+        self.__list.insert(0, data)
 
     def remove_front(self):
+        """Remove an element in the front of the deque.
+
+        Returns
+        -------
+        Object
+            Data is an object of any type
         """
-        """
-        pass
+        if len(self.__list) > 0:
+            item = self.__list[0]
+            self.__list.pop(0)
+            return item
+        return None
 
     def peek_front(self):
+        """Show the element at the front of the queue.
+
+        Returns
+        -------
+        Object
+            Data is an object of any type
         """
-        """
-        pass
+        if len(self.__list) > 0:
+            return self.__list[0]
+        return None
 
     def add_rear(self, data):
+        """Add an element to the end of the deque.
+
+        Parameters
+        ----------
+        data : Object
+            Data is an object of any type
         """
-        """
-        pass
+        self.__list.append(data)
 
     def remove_rear(self):
+        """Remove an element in the end of the deque.
+
+        Returns
+        -------
+        Object
+            Data is an object of any type
         """
-        """
-        pass
+        if len(self.__list) > 0:
+            item = self.__list[-1]
+            self.__list.pop()
+            return item
+        return None
 
     def peek_rear(self):
+        """Show the element at the end of the queue.
+
+        Returns
+        -------
+        Object
+            Data is an object of any type
         """
-        """
-        pass
+        if len(self.__list) > 0:
+            return self.__list[-1]
+        return None
 
     def size(self):
         """Return the size of the linked list.
@@ -69,9 +120,16 @@ class Deque():
         Integer
             List size
         """
-        pass
+        return len(self.__list)
 
     def is_empty(self):
+        """Reveals whether the linked list is empty.
+
+        This operations runs in constant time, O(1).
+
+        Returns
+        -------
+        Boolean
+            Returns True is the linked list is empty
         """
-        """
-        pass
+        return self.__list == []
