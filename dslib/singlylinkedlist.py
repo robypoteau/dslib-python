@@ -5,7 +5,6 @@ placed in nodes, in particularly the SLLNode class. Linked lists can grow
 dynamically without concern for elements being contiguous in memory. Each
 element points to the next element in the list.
 
-
 Functions:
     * insert_node
     * remove_node
@@ -80,10 +79,12 @@ class LinkedList():
         Object
             Data in the node
         """
-        if self.__length == 0:
+        if self.__head is None:
             raise IndexError("no nodes in this linked list.")
-        data = self.__head.get_data() if self.__head else self.__head
-        self.__head = self.__head.get_next() if self.__head else self.__head
+
+        data = self.__head.get_data()
+        self.__head = self.__head.get_next()
+
         self.__length -= 1
         return data
 

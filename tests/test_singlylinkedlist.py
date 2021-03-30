@@ -25,8 +25,9 @@ def test_iterator():
 
 
 def test_insert_node():
-    data1 = "Datum"
     ll = LinkedList()
+
+    data1 = "Datum"
     ll.insert_node(data1)
     assert ll._LinkedList__head.get_data() == data1
 
@@ -43,8 +44,9 @@ def test_insert_node():
 
 
 def test_remove_node():
-    data1 = "Datum"
     ll = LinkedList()
+
+    data1 = "Datum 1"
     ll.insert_node(data1)
     data2 = "Datum 2"
     ll.insert_node(data2)
@@ -54,6 +56,9 @@ def test_remove_node():
     assert ll.remove_node() == data3
     assert ll.remove_node() == data2
     assert ll.remove_node() == data1
+
+    with pytest.raises(IndexError):
+        ll.remove_node()
 
 
 def test_search():
