@@ -32,7 +32,7 @@ class Deque():
     def __next__(self):
         try:
             item = self.__list[self.__index]
-        except Exception as e:
+        except Exception:
             raise StopIteration
 
         self.__index += 1
