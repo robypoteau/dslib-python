@@ -14,9 +14,9 @@ Functions:
 
 class DLLNode:
     def __init__(self, data):
-        self.data = data
-        self.next = None
-        self.prev = None
+        self.__data = data
+        self.__next = None
+        self.__prev = None
 
     def get_data(self):
         """Get the data in the node.
@@ -28,7 +28,7 @@ class DLLNode:
         Object
             Data in the node
         """
-        return self.data
+        return self.__data
 
     def set_data(self, data):
         """Edit the data in the node.
@@ -40,7 +40,7 @@ class DLLNode:
         data : Object
             Data is an object of any type
         """
-        self.data = data
+        self.__data = data
 
     def get_next(self):
         """Get the next-pointer to the next node.
@@ -52,7 +52,7 @@ class DLLNode:
         DLLNode
             Pointer to a node
         """
-        return self.next
+        return self.__next
 
     def set_next(self, next):
         """Edit the next-pointer to the next node.
@@ -64,7 +64,7 @@ class DLLNode:
         next : DLLNode
             A doubly linked list node
         """
-        self.next = next
+        self.__next = next
 
     def get_prev(self):
         """Get the prev-pointer to the previous node.
@@ -76,7 +76,7 @@ class DLLNode:
         DLLNode
             Pointer to a node
         """
-        return self.prev
+        return self.__prev
 
     def set_prev(self, prev):
         """Edit the prev-pointer to the previous node.
@@ -88,11 +88,11 @@ class DLLNode:
         next : DLLNode
             A doubly linked list node
         """
-        self.prev = prev
+        self.__prev = prev
 
     def __repr__(self):
         return (
-            f'<Data: {self.data},'
-            f' Next: {self.next.get_data() if self.next else self.next}',
-            f' Prev: {self.prev.get_data() if self.prev else self.prev}>'
+            f'<Data: {self.__data},'
+            f' Next: {self.__next.get_data() if self.__next else self.__next}',
+            f' Prev: {self.__prev.get_data() if self.__prev else self.__prev}>'
         )
