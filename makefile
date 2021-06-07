@@ -9,7 +9,7 @@ env: ## Create an virtualenv environment
 	./env/bin/python -m pip install -r requirements.txt
 
 dev-env: env ## Create an virtualenv dev environment
-	./env/bin/python -m pip install -r requirements-dev.txt
+	./env/bin/python -m pip install -r requirements.txt
 
 test:  ## Run the test suite and linter
 	find . -name '*.pyc' -exec rm -f {} \;
