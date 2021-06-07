@@ -8,9 +8,6 @@ env: ## Create an virtualenv environment
 	test -d env || virtualenv env
 	./env/bin/python -m pip install -r requirements.txt
 
-dev-env: env ## Create an virtualenv dev environment
-	./env/bin/python -m pip install -r requirements.txt
-
 test:  ## Run the test suite and linter
 	find . -name '*.pyc' -exec rm -f {} \;
 	./env/bin/flake8 dslib tests
