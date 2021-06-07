@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/robypoteau/dslib-python.svg?branch=main)](https://travis-ci.com/robypoteau/dslib-python)
+
 # Data Structure and Algorithms
 
 The study and development of the canonical data structures.
